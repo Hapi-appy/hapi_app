@@ -28,7 +28,7 @@ module.exports = [{
         console.log(err);
         return reply('Error on Post/Put!');
       }
-      reply(request.payload.name + ' added to the family!\n');
+      return reply(request.payload.name + ' added to the family!\n');
     });
   }
 }, {
@@ -50,7 +50,7 @@ module.exports = [{
           }
         });
       } else {
-        reply.status(500);
+        return reply.status(500);
       }
     });
   }
@@ -65,7 +65,7 @@ module.exports = [{
         console.log(err);
         return reply('Error on delete!');
       }
-      reply('You\'re outta the family!');
+      return reply('You\'re outta the family!');
     });
   }
 }];
