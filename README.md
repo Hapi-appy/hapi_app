@@ -65,18 +65,26 @@ mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost/pf_db')
 ```
   <em>And will add to the name, instrument and actor properties the values assigned.</em>
 
+###PUT
+```
+http PUT localhost:5000/api/put/{pfId} name=Shirley instrument=zither actor='Karen Scott'
+
+  <em>This will update a data object reacted with mongoose.connection</em>
+
+```
+
 ###GET
 Get all Partridge family members
 
 ```
-http POST localhost:5000/api/pf
+http GET localhost:5000/api/pf
 ```
 
 ###DELETE
 Delete family member from database by by finding their unique mongo _id and it adding to /api/delete/<id>
 
 ```
-http POST localhost:5000/api/delete/{pfId}
+http DELETE localhost:5000/api/delete/{pfId}
 ```
 
 ## To Test
