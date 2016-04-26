@@ -39,12 +39,13 @@ module.exports = [{
       '_id': request.params.pfId
     }, (err, member) => {
       if (!err) {
+        const name = member.name;
         member = request.payload;
         Pf.update({
           _id: request.params.pfId
         }, member, (err) => {
           if (!err) {
-            return reply(request.payload.name + ' stays in the family for another season!\n');
+            return reply(name + ' stays in the family for another season!\n');
           }
             return reply('The contract says we can\'t change that!');
         });
